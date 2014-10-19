@@ -1,11 +1,5 @@
 #!/usr/bin/jc
-
-NB. display the contents of all the *.sh files in this directory
-NB.
-NB. echo 'hello world'
-
-rd =: 1!:1&<
-
-rd '*.sh' NB. read the *.sh files, displaying on stdout
-
+NB. print the words 'hello world' to the console
+stdout 'hello world from J'
+echo'' NB. print newline
 exit''
