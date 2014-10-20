@@ -8,7 +8,7 @@ Too small even for their own files:
 
 Put an `=` underneath each character of the current line (Vim)
 
-```viml
+```vim
 yypVr=
 ```
 
