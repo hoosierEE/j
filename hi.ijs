@@ -1,9 +1,8 @@
 #!/usr/bin/jc
+NB. obligatory
 
-NB. print the words 'hello world' to the console
-
-stdout 'hello world from J'
+stdout 'hello world from J' NB. print the words 'hello world from J' to stdout
 
 echo'' NB. print newline
-
 exit''
+
