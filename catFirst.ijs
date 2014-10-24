@@ -1,16 +1,17 @@
 #!/usr/bin/jc
-NB. Read contents of pwd into a string, echo result.
+NB. Read contents of one of the ijs files in this directory into a string and echo the result.
 
 NB. One-line version:
-NB. contentsOfFirst =:  1!:1 {.{. 1!:0 '*.ijs'
+NB. scriptName =.  1!:1 {.{. 1!:0 '*.ijs'
 
-all =: 1!:0 '*.ijs'                     NB. read all the .ijs files (output is similar to UNIX ls -l) into a table of boxes
-firstFile =: {. all                     NB. get the first file (first row)
-firstScriptName =: {. firstFile         NB. get the file name (first entry in the row)
-
-contentsOfFirst =: 1!:1 firstScriptName NB. read (1!:1) the boxed filename (filename is already boxed)
-
-echo contentsOfFirst NB. display it to stdout with trailing newline (added by echo)
-
-exit''
+NB. Directory (e.g. `dir` in Windows)
+all =. 1!:0 '*.ijs'
+NB. a single script's name
+scriptName =. {.^:2 all
+NB. read the script into a string
+str =. 1!:1 scriptName
+echo scriptName
+echo ''
+echo str
+exit ''
 
