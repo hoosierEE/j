@@ -13,5 +13,5 @@ str =. 1!:1 scriptName
 echo scriptName
 echo ''
 echo str
-exit ''
+NB.exit '' NB. when calling this script from a J session, the 'exit' will stop the session, FYI.
 
