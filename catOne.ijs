@@ -3,13 +3,12 @@ NB. Read contents of one of the ijs files in this directory into a string and ec
 NB. scriptName =.  1!:1 {.{. 1!:0 '*.ijs' NB. One-liner
 
 
-all =. 1!:0 '*.ijs'     NB. Directory (e.g. `dir` in Windows)
-scriptName =. {.^:2 all NB. a single script's name
+NB. all =. 1!:0 '*.ijs'     NB. Directory (e.g. `dir` in Windows)
+NB. scriptName =. {.^:2 all NB. a single script's name
 
-
+scriptName =. <'catOne.ijs' NB. Makes this script a quine.
 str =. 1!:1 scriptName NB. read the script into a string
-echo scriptName
-echo ''
-echo str
-NB.exit '' NB. when calling this script from a J session, the 'exit' will stop the session, FYI.
+echo ;:< str
+
+exit '' NB. when calling this script from a J session, the 'exit' will stop the session, FYI.
 
