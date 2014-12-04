@@ -1,4 +1,4 @@
-#!/usr/bin/jconsole
+#!/usr/bin/jc
 
 0 :0
 Extra Simple Mortgage Calculator
