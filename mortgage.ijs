@@ -10,11 +10,14 @@ Output: Monthly payment to fully amortize the loan, with the following assumptio
 3. Loan term: 15 years
 )
 
-downPayment =. 10000
+downPayment =. 6000
 monthlyRate =. 0.05 % 12
 loanMonths  =. 15 * 12
 houseAmount =. ".>}.}.ARGV NB. get the input arguments
 loanAmount  =. houseAmount - downPayment
+insurance   =. 75
+taxes       =. houseAmount * 0.01 % 12
+NB. pmi         =.
 
 0 :0
 Monthly Payment Formula
@@ -29,6 +32,7 @@ n = number of payments (same as number of months)
 
 NB. the naive calculation:
 monthlyPayment =. loanAmount * ((monthlyRate * (1 + monthlyRate)^loanMonths) % ((1 + monthlyRate)^loanMonths) - 1)
+monthlyPayment =. monthlyPayment + insurance + taxes
 
 NB. mildly refacored:
 NB. termInterest =. (1 + monthlyRate)^loanMonths
