@@ -8,7 +8,7 @@ NB. scriptName =. {.^:2 all NB. a single script's name
 
 scriptName =. <'catOne.ijs' NB. Makes this script a quine.
 str =. 1!:1 scriptName NB. read the script into a string
-echo ;:< str
+echo str
 
 exit '' NB. when calling this script from a J session, the 'exit' will stop the session, FYI.
 
