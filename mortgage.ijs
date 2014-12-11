@@ -3,7 +3,7 @@
 monthlyPayment =: 3 : 0
 NB. some assumptions
 downPayment =. 6000
-monthlyRate =. 0.035 % 12
+monthlyRate =. 0.03125 % 12
 numPayments  =. 180
 houseAmount =. y NB. ".>}.}.ARGV NB. get the input arguments
 loanAmount  =. houseAmount - downPayment
