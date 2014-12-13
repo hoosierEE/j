@@ -3,11 +3,11 @@
 Note 'haversine.ijs'
 This script calculates both the 'great circle' distance, as well as the absolute
 distance (i.e. going in a straight line through dirt and bedrock) of two latitude and longitude points.
+For short distances, these two numbers will be VERY similar.
 TODOs
 1. pretty print
 2. accept argument list
 3. output wavelengths
-
 for more info on the haversine calculation, check out here:
 http://www.movable-type.co.uk/scripts/latlong.html
 )
