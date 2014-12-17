@@ -47,11 +47,12 @@ pps =: 9!:11
 pps 20
 
 adjustedDist =: 3 : 0
-y - (y**:(y % R))%24
+y - 24 %~ y **: y % R
 )
 
 wavelengths =: 3 :0
-NB. number of wavelengths of 103.7 MHz within this distance
+NB. Helpful site: http://radiostationnet.com/fm/indiana/WFIU/
+NB.
 )
 
 echo adjustedDist dist NB. 3.9564750321807733435
