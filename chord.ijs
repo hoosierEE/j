@@ -7,6 +7,7 @@ pps 20 NB. 20 places of print precision
 NB. avg. earth radius in km
 R=:6371
 
+NB. Coordinates. TODO: give them as command line parameters instead!
 NB. fMRI location
 lat1=:39.171980
 lon1=:_86.519936
@@ -14,7 +15,9 @@ NB. WFIU guided tower location
 lat2=:39.141944
 lon2=:_86.495278
 
-NB. dist =: 3956.4750957576016 NB. meters
+NB. this number was calculated using a different program.
+NB. TODO: calculate using this program.
+dist =: 3956.4750957576016 NB. meters
 
 NB. helper function
 cir =: 3 : 0
@@ -30,11 +33,7 @@ dy =: 2 cir 1
 dz =: cir 1
 C =. %:(+/)*: dx,dy,dz
 )
-
-
 echo chord''
-
-dist =: 3956.4750957576016 NB. meters
 
 adjustedDist =: 3 :0
 y-24%~y**:y%R
