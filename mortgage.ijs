@@ -1,5 +1,14 @@
 #!/usr/bin/jc
 
+Note 'mortgage'
+Inteneded to be symlinked to, and called via the command line with house price(s)
+as the argument(s).
+  Example:
+
+$ mortgage 150000
+1185.8
+)
+
 monthlyPayment =: 3 : 0
 NB. some assumptions
 downPayment =. 6000
