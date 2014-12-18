@@ -9,6 +9,7 @@ NB. WFIU guided tower location
 lat2=:39.141944
 lon2=:_86.495278
 
+<<<<<<< HEAD
  Note 'tunnel distance, from Wikipedia'
 the calculation for the chord distance on a spherical earth is:
 dx = cos(lat2)cos(lon2) - cos(lat1)cos(lon1)
@@ -58,15 +59,37 @@ hallo123_lk
 NB. args
 x =. 3 :0
 x y m n u v (y x u v)
+=======
+NB. great circle distance
+dist =: 3956.4750957576016 NB. meters
+
+pps =: 9!:11
+pps 20 NB. 20 places of print precision
+
+adjustedDist =: 3 :0
+y-24%~y**:y%R
+>>>>>>> 5c6fef2aba1c881d9f8f0fad42b6f2d3694b6b32
 )
 
 
 wavelengths =: 3 :0
+<<<<<<< HEAD
 c =. 299792458 NB. speed of light (m/s)
 NB. Helpful site: http://radiostationnet.com/fm/indiana/WFIU/
 NB.
+=======
+NB. Helpful: http://radiostationnet.com/fm/indiana/WFIU/
+NB. f - 103.7MHz = 103700000
+NB. λ - v%f where v = speed of light
+NB. N - number of wavelengths between here and there: D % λ
+c =. 299792458
+f =. 103700000
+d =. adjustedDist dist
+d * c % f
+>>>>>>> 5c6fef2aba1c881d9f8f0fad42b6f2d3694b6b32
 )
 
-echo adjustedDist dist NB. 3.9564750321807733435
+echo wavelengths'' NB. 11254.209646912615426
 exit''
+
 
