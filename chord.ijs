@@ -1,5 +1,9 @@
 #!/usr/bin/jc
 
+NB. Be precise!
+pps =: 9!:11
+pps 20 NB. 20 places of print precision
+
 NB. avg. earth radius in km
 R=:6371
 
@@ -11,11 +15,25 @@ NB. WFIU guided tower location
 lat2=:39.141944
 lon2=:_86.495278
 
-NB. great circle distance
-dist =: 3956.4750957576016 NB. meters
+NB. dist =: 3956.4750957576016 NB. meters
 
-pps =: 9!:11
-pps 20 NB. 20 places of print precision
+NB. helper function
+cir =: 3 : 0
+y &o. lat2 - y &o. lat1
+:
+((x &o. lat2) * (y &o. lon2)) - ((x &o. lat1) * (y &o. lon1))
+)
+
+NB. great circle distance
+chord =: 3 : 0
+dx =: 2 cir 2
+dy =: 2 cir 1
+dz =: cir 1
+C =. %:(+/)*: dx,dy,dz
+)
+
+
+echo chord''
 
 adjustedDist =: 3 :0
 y-24%~y**:y%R
@@ -36,3 +54,5 @@ echo wavelengths'' NB. 11254.209646912615426
 exit''
 
 
+0.030160892133817885502
+11254.209646912615426
