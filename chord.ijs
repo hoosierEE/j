@@ -31,7 +31,7 @@ chord =: 3 : 0
 dx =: 2 cir 2
 dy =: 2 cir 1
 dz =: cir 1
-C =. %:(+/)*: dx,dy,dz
+%:@:(+/)@:*: dx,dy,dz
 )
 echo chord''
 
@@ -46,7 +46,7 @@ NB. λ - v÷f where v = speed of light
 NB. N - number of wavelengths between here and there: D % λ
 c =. 299792458
 f =. 103700000
-d =. adjustedDist dist
+d =. chord'' NB. adjustedDist dist
 d * c % f
 )
 
