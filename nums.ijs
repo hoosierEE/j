@@ -7,3 +7,7 @@ special kinds of numbers
 
 NB. general form is NbDDD.DDD
 19.3j23.0r9b8.3
+
+30r5
+
+1.9e_3j8
