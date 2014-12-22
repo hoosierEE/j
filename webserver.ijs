@@ -1,13 +1,13 @@
+#!/usr/bin/env jc
+
 Note 'webserver'
 Example use (from jconsole):
-
-  load'webserver.ijs'
-  8080 webserver0''
-
+    load'webserver.ijs'
+    8080 webserver0''
 )
 
 webserver0=: verb define
- 80 webserver0 y NB. try to use port 80 by default
+ 80 webserver0 y NB. try to use port 80 by d\n\refault TODO: something
 :
  port=: x
  require 'socket'
