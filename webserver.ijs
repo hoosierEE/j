@@ -1,12 +1,24 @@
-#!/usr/bin/env jc
-
 Note 'webserver'
 Example use (from jconsole):
     load'webserver.ijs'
     8080 webserver0''
 )
 
-webserver0=: verb define
+x =. n > u <. v >. m < y
+
+nThing=: 13 :0
+iblah=. x
+)
+
+a =:0 :0
+stringthing =. 'hi there'
+ixs=: 1 2 3
+_9:
+)
+
+NB. a comment
+
+webserver0=:verb define
  80 webserver0 y NB. try to use port 80 by d\n\refault TODO: something
 :
  port=: x
