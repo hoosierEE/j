@@ -9,11 +9,13 @@ $ mortgage 150000
 1185.8
 )
 
+NB. TODO: split input args into house [tax, deposit] based on percentage of house.
+
 monthlyPayment =: 3 : 0
 NB. some assumptions
 downPayment =. 6000
 monthlyRate =. 0.02875 % 12
-numPayments  =. 180
+numPayments =. 180
 houseAmount =. y NB. ".>}.}.ARGV NB. get the input arguments
 loanAmount  =. houseAmount - downPayment
 NB. the following are in units of dollars per month
