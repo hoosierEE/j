@@ -18,13 +18,15 @@ NB. some assumptions
 downPayment =. 6000
 monthlyRate =. 0.02875 % 12
 numPayments =. 180
-houseAmount =. y NB. ".>}.}.ARGV NB. get the input arguments
+houseAmount =. y
 loanAmount  =. houseAmount - downPayment
 NB. the following are in units of dollars per month
 insurance   =. 75
 taxes =. 1357 % 12 NB.      =. houseAmount * 0.01 % 12
-taxes + insurance + monthlyRate * loanAmount % 1 - (1 + monthlyRate)^(-numPayments)
+taxes+insurance+monthlyRate*loanAmount%1-(1+monthlyRate)^(-numPayments)
 )
+
+a =: _2:
 
 echo monthlyPayment ".>}.}.ARGV NB. input args: house value
 exit''

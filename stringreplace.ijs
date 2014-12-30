@@ -1,6 +1,4 @@
-4 : 0 NB. 'stringreplace' TODO blah
-adverb define
-
+stringreplace =: 3 : 0
 txt=. ,y
 t=. _2 [\ ,x
 old=. {."1 t
