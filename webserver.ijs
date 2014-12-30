@@ -6,11 +6,15 @@ Example use (from jconsole):
 
 x =. n > u <. v >. m < y
 
-nThing=: 13 :0
+aThing =: 0 : 0
+'hi world'
+)
+
+nThing=: 13 : 0
 iblah=. x
 )
 
-a =:0 :0
+a =: noun define
 stringthing =. 'hi there'
 ixs=: 1 2 3
 _9:
