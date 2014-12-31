@@ -1,13 +1,67 @@
 #!/usr/bin/jc
 
-Note 'taken from https://opengarden.com/jobs'
-
-The 2010 Census puts populations of 26 largest US metro areas at 18897109, 12828837, 9461105, 6371773, 5965343, 5946800, 5582170, 5564635, 5268860, 4552402, 4335391, 4296250, 4224851, 4192887, 3439809, 3279833, 3095313, 2812896, 2783243, 2710489, 2543482, 2356285, 2226009, 2149127, 2142508, and 2134411.
-
-Can you find a subset of these areas where a total of exactly 100,000,000 people live, assuming the census estimates are exactly right? Provide the answer and code or reasoning used.
+Note 'testing'
 )
 
-NB. Convert sentence to J array:
-pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411
+NB. jVerb
+= < <. <: > >. >: + +. +: * *. *: - -. -: % %. %: ^ ^. $ $. $: ~. ~: | |. |:
+|.!.f
+, ,. ,: ; ;: # #. #: ! /: \: [ [: ] { {. {: {:: }. }: ". ": ? ?.
+A. c. C. e. E. i. i: I. j. L. o. p. p: q: r. s: u: x:
+_9: _8: _7: _6: _5: _4: _3: _2: _1: 0: 1: 2: 3: 4: 5: 6: 7: 8: 9:
 
-NB. find permutation(s) whose sum = 100 million.
+NB. jNoun
+a. a: _. _:
+
+NB. jConjuction
+^: . .. .: :  :. :: ;. !. !: " ` `: @ @. @: & &. &: &.: d. D. D: H. L: S: T.
+
+NB. jAdverb
+~ / \ /. \. } b. f. M. t. t:
+
+NB. jCopula
+=. =:
+
+m =: monad define
+x - y
+try. catchd. end.
+1 2 3
+)
+
+n =. conjunction define
+%:*/
+)
+
+myVerb =: 3 : 0
+  (1 - (3 * (4)) % 20 + y)
+  x = 1
+  try.
+    x + y
+  do.
+  catchd.
+  fcase.
+    while. whilst.
+  case.
+    NB. TODO FIXME XXX inside a comment, these words appear speical.
+    select. return.
+    label_s. goto_x.
+    if. elseif. else. end.
+  end.
+)
+
+thisisMyNoun =. 0 : 0
+  'thisIsMyNoun', 'and', 'it''s', 'awesome'
+  10 20 30
+  Regular words!
+)
+
+Note 'myNote'
+this is a note
+)
+
+ Note 'myNote'
+this is a note preceded by whitespace.
+)
+
+something =. %:+/*: 4 Note 'single-line note'
+
