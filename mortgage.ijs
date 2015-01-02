@@ -3,12 +3,9 @@
 Note 'mortgage'
 Make a symlink to this, then call via the command line
 with house price as the argument.
-
-Example:
-
-$ mortgage 150000
-1185.8
-
+  Example:
+    $ mortgage 150000
+    1185.8
 )
 
 NB. TODO: split input args into house [tax, deposit] based on percentage of house.
