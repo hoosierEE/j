@@ -1,5 +1,13 @@
 #!/usr/bin/jc
 
++/
+
+uiew =: 9:
+
+0:
+1r3j4e8
+NB. xXxX xXX Fixme ToDo Todo
+
 NB. Be precise!
 pps =. 9!:11
 pps 20 NB. 20 places of print precision
@@ -19,7 +27,12 @@ y &o. lat2 - y &o. lat1
 ((x &o. lat2) * (y &o. lon2)) - ((x &o. lat1) * (y &o. lon1))
 )
 
-1r3j4e8
+NB. nouns
+a. a: _. _
+NB. adverbs
+~ / \ } t. t: t.
+NB. Conjunctions
+. : .. .: :: :. ;. !. !: " ` @ @. @: &: &. & &.: d. D. D: H. L: S: T.
 
 NB. great circle distance
 chord =: 3 : 0
@@ -34,7 +47,7 @@ NB. avg. earth radius in km
 R=.6371
 NB. Helpful: http://radiostationnet.com/fm/indiana/WFIU/
 NB. f - 103.7MHz = 103700000
-NB. λ - v÷f where v = speed of light
+NB. λ - v ÷ f, where v = speed of light
 NB. N - number of wavelengths between here and there: D ÷ λ
 c =. 299792458 NB. speed of light
 f =. 103700000 NB. approx center frequency of WFIU radio station
