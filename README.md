@@ -37,15 +37,10 @@ nums
 ----
 Some of the (many!) ways to represent a number in J. Currently used as a test for [syntax highlighting][syntax].
 
-webserver
----------
-Taken from [here][jserve], the only change being `x.` and  `y.` become `x` and `y`.
-
 challenge
 ---------
 Found a page with a "prove you're a real programmer" challenge and thoguht it would be fun to tackle in J. Not interested in this job at this time, just the challenge.
 
 [syntax]: https://github.com/hoosierEE/vim-j
-[jserve]: http://www.jsoftware.com/jwiki/JWebServer
 [files]: http://www.jsoftware.com/docs/help803/dictionary/dx001.htm
 [jlang]: http://jsoftware.com
