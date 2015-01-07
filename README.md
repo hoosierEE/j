@@ -41,6 +41,11 @@ challenge
 ---------
 Found a page with a "prove you're a real programmer" challenge and thoguht it would be fun to tackle in J. Not interested in this job at this time, just the challenge.
 
+skittish
+--------
+A codegolf question, ["A Skittish Program"][skittish].
+
 [syntax]: https://github.com/hoosierEE/vim-j
 [files]: http://www.jsoftware.com/docs/help803/dictionary/dx001.htm
 [jlang]: http://jsoftware.com
+[skittish]: http://codegolf.stackexchange.com/q/43201/18872
