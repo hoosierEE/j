@@ -1,5 +1,2 @@
 NB. Calculate parallel resistance
-
-par =: %@:(+/)@:%
-
-
+parallel =: %@:(+/)@:%
