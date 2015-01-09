@@ -14,7 +14,7 @@ monthlyPayment =: 3 :0
 
 NB. some assumptions
 downPayment =. 7500
-monthlyRate =. 0.03625%12
+monthlyRate =. 0.03625%12 Note 'a comment?'
 numPayments =. 12*30
 houseAmount =. y
 loanAmount  =. houseAmount-downPayment
