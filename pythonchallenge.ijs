@@ -1,5 +1,9 @@
 #!/usr/bin/jc
 
+NB. If you haven't yet done an
+NB.    install'all'
+NB. then now would be a good time to do that.
+
 NB. second riddle
 NB. Text:
 
@@ -11,6 +15,16 @@ a.{~(-&26)^:(122<])"0](2+])^:(e.(97+i.26)"0)"0 a.I. y
 )
 echo 'firstRiddle'
 echo firstRiddle riddleText
+echo''
+
+NB. do over
+firstAmend =: 3 : 0
+a =. u:(97+i.26)
+b =. (2|.a)
+(b,a.) {~ (a,a.) i. y
+)
+echo 'firstAmend'
+echo firstAmend riddleText
 echo''
 
 NB. Find rare characters. Too easy in J.
@@ -32,5 +46,15 @@ echo 'thirdRiddle'
 echo thirdRiddle''
 echo''
 
-NB.exit''
+load'web/gethttp'
+fourthRiddle =: 3 : 0
+str =. 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
+first =. '12345'
+reply =. gethttp str,first
+res =. >{:;: reply
+)
+
+echo 'fourthRiddle'
+echo fourthRiddle''
+echo''
 
