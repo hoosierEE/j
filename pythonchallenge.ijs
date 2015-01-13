@@ -22,8 +22,11 @@ echo 'secondRiddle'
 echo secondRiddle''
 echo''
 
+NB. one small letters, flanked by EXATLY 3 big bodyguards...
 thirdRiddle =: 3 : 0
-a=:y
+txt =. 1!:1<'bodyguards.txt'
+pat =. '(?<=[a-z])[A-Z]{3}[a-z][A-Z]{3}(?=[a-z])'
+3{"1>pat rxall txt
 )
 echo 'thirdRiddle'
 echo thirdRiddle''
