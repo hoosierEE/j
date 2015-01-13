@@ -18,6 +18,8 @@ echo firstRiddle riddleText
 echo''
 
 NB. do over
+NB. found a pretty good hint here
+NB. http://www.jsoftware.com/jwiki/Vocabulary/adot
 firstAmend =: 3 : 0
 a =. u:(97+i.26)
 b =. (2|.a)
