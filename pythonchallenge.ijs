@@ -21,9 +21,9 @@ NB. do over
 NB. found a pretty good hint here
 NB. http://www.jsoftware.com/jwiki/Vocabulary/adot
 firstAmend =: 3 : 0
-a =. u:(97+i.26)
-b =. (2|.a)
-(b,a.) {~ (a,a.) i. y
+NB. a =. u:(97+i.26)
+NB. b =. (2|.a)
+((2|.a),a.) {~ ((a=.u:(97+i.26)),a.) i. y
 )
 echo 'firstAmend'
 echo firstAmend riddleText
@@ -39,6 +39,8 @@ echo secondRiddle''
 echo''
 
 NB. one small letters, flanked by EXATLY 3 big bodyguards...
+FHS_jregex_=:1
+load 'regex'
 thirdRiddle =: 3 : 0
 txt =. 1!:1<'bodyguards.txt'
 pat =. '(?<=[a-z])[A-Z]{3}[a-z][A-Z]{3}(?=[a-z])'
@@ -48,12 +50,17 @@ echo 'thirdRiddle'
 echo thirdRiddle''
 echo''
 
+NB. Build two lists. First, with the raw response "and the next nothing is XXXXX"
+NB. Second, a list of the nodes. When one of these lists repeats, assume we wrapped
+NB. around to the start of the list again.
 load'web/gethttp'
 fourthRiddle =: 3 : 0
 str =. 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
 first =. '12345'
+
 reply =. gethttp str,first
-res =. >{:;: reply
+next =. >{:;: reply
+
 )
 
 echo 'fourthRiddle'
