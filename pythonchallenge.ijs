@@ -37,8 +37,8 @@ echo secondRiddle''
 echo''
 
 NB. one small letter, flanked by EXATLY 3 big bodyguards...
-NB.   FHS_jregex_=:1 NB. add this line on ARM so that regex libraries will load.
-NB.   load 'regex'
+FHS_jregex_=:1 NB. add this line on ARM so that regex libraries will load.
+load 'regex'
 NB. Perhaps instead use:
 NB.   require'regex'
 NB. Not really sure...
@@ -70,4 +70,7 @@ next =. >{:;: reply
 echo 'fourthRiddle'
 echo fourthRiddle''
 echo''
+
+echo 'to exit the J terminal and return to the shell, type the letters exactly as you see them below:'
+echo '   exit'''''
 
