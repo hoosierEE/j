@@ -66,9 +66,9 @@ NB.log =. node =. '8022' NB. after divide by two prompt
 NB. Some helpers
 next =. 3 : '>{:;: y' NB. extract next node from http response
 while. (# log) = (+/~: log) do.
-    node =. next reply =. gethttp str,node
-    log =. node;log
-    echo reply
+  node =. next reply =. gethttp str,node
+  log =. node;log
+  echo reply
 end.
 )
 
