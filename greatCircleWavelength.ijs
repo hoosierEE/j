@@ -1,13 +1,4 @@
 #!/usr/bin/jc
-
-+/
-
-uiew =: 9:
-
-0:
-1r3j4e8
-NB. xXxX xXX Fixme ToDo Todo
-
 NB. Be precise!
 pps =. 9!:11
 pps 20 NB. 20 places of print precision
