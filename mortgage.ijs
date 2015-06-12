@@ -1,5 +1,3 @@
-#!/usr/bin/jc
-
 Note 'mortgage'
 Make a symlink to this, then call via the command line
 with house price as the argument.

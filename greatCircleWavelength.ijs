@@ -1,4 +1,3 @@
-#!/usr/bin/jc
 NB. Be precise!
 pps =. 9!:11
 pps 20 NB. 20 places of print precision

@@ -1,4 +1,3 @@
-#!/usr/bin/jc
 NB. Read contents of one of the ijs files in this directory into a string and echo the result.
 NB. scriptName =.  1!:1 {.{. 1!:0 '*.ijs' NB. One-liner
 

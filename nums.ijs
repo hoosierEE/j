@@ -1,4 +1,3 @@
-#!/usr/bin/jc
 Note ''
 b,e,j,p,x may be used (in combination or alone) to denote
 special kinds of numbers
