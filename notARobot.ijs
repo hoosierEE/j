@@ -10,34 +10,30 @@ exactly 100,000,000 people live, assuming the census estimates
 are exactly right? Provide the answer and code or reasoning used.
 )
 
-pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411
-pips =: i.5
-
-alg =: 3 : 0
+ks =: 4 : 0
     NB. similar to the knapsack problem
-    a =: x:!#pips
-    'min max' =: ({.,{:)>.1e8%pops
-    while. a =: <:a do.
-        for_b. min+i.max-min do. NB. numbers of combinations
-            if. 1e8=+/b{.(a A.pops) do.
-                echo b{.(a A.pops)
-                goto_done.
-            end.
-        end.
+    NB. does y contain subset sum x?
+    NB. if so print the subset
+
+    ssum =: x
+
+    ys =: \:~y-.0 NB. remove zeros and sort
+    ai =: (>:@i.@-@x:@# #. (+/@:< {.)\.) @: (C.^:(1 = L.)) NB. anagram index
+    maxAI =: ai ys NB. final anagram index
+    while. maxAI > 0 do.
+        if. 0=1e6|maxAI do. echo maxAI end. NB. even this by itself is slow!
+        NB. if. $ssum (13 : 'y{~i.{.>:I. x=+/\y' M.) maxAI A. ys do.
+        NB.     echo ssum (13 : 'y{~i.{.>:I. x=+/\y') maxAI A. ys
+        NB.     goto_done.
+        NB. end.
+        maxAI =: <:maxAI
     end.
     label_done.
 )
-alg''
 
-NB. alg =: 3 : 0
-    NB.     NB. exponential time complexity
-    NB.     for_a. x:!#pops do.
-    NB.         for_b. #pops do.
-    NB.             NB. given anagram index a, return sum = 1e8 or nothing
-    NB.             if. 1e8 e. (a A. pops) do.
-    NB.                 echo a,b
-    NB.             end.
-    NB.         end.
-    NB.     end.
-    NB. )
-    NB. alg''
+pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411
+run =: 3 : '1e8 ks pops'
+echo 'is 1e8 subset sum of the list of pops?'
+echo 'type "run 0" to find out'
+NB. run''
+
