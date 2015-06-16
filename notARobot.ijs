@@ -11,24 +11,12 @@ are exactly right? Provide the answer and code or reasoning used.
 )
 
 ks =: 4 : 0
-    NB. similar to the knapsack problem
     NB. does y contain subset sum x?
     NB. if so print the subset
-
     ssum =: x
-
-    ys =: \:~y-.0 NB. remove zeros and sort
-    ai =: (>:@i.@-@x:@# #. (+/@:< {.)\.) @: (C.^:(1 = L.)) NB. anagram index
-    maxAI =: ai ys NB. final anagram index
-    while. maxAI > 0 do.
-        if. 0=1e6|maxAI do. echo maxAI end. NB. even this by itself is slow!
-        NB. if. $ssum (13 : 'y{~i.{.>:I. x=+/\y' M.) maxAI A. ys do.
-        NB.     echo ssum (13 : 'y{~i.{.>:I. x=+/\y') maxAI A. ys
-        NB.     goto_done.
-        NB. end.
-        maxAI =: <:maxAI
-    end.
-    label_done.
+    psum =: 0
+    lastai =: A.i.#y  NB. last anagram index for argument of length y
+    `(ssum=
 )
 
 pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411
