@@ -3,23 +3,27 @@ NB. first subset whose sum equals x
 NB. Sum the first k elements of the xth anagram of `pops` (sorted descending)
 NB. until the sum equals or exceeds `total`.  If equal, print and exit.
 NB. Otherwise, increment x by !k and repeat until x >: !#y.
+clear''
 
-pips =: \:~ 5 4 2 1
-pops =: \:~ 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411 NB. sorted descending
+pips =: 5 4 2 1
+pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411 NB. sorted descending
 NB. target =: 1e8
 target =: 7
+
 sum =: 4 : 0 NB. x subset sum of y
     assert. *./(x<:+/y),(x>0),(x>:<./y),(0&=#@$x)
-    lastai =: <:!#y NB. A. y
-    sorted =: \:~y
-    idx =: 0
-    while. idx < lastai do.
-        z =: idx A. sorted
+    minterms =: <./>.x%y NB. target sum needs at least this many terms
+    aibeg =: 0 NB. starting anagram index
+    aiend =: <:!#y NB. ending anagram index
+    sorted =: \:~y NB. descending
+    NB. exhaustive search (exponential)
+    while. aibeg <: aiend do.
+        z =: aibeg A. sorted
         if. x e. +/\ z do.
             ({.>:I.(x =+/\z)) {. z
             return.
         end.
-        idx =: >:idx
+        aibeg =: >: aibeg
     end.
     'none found'
 )
@@ -35,6 +39,7 @@ tests =: 3 : 0
     echo 11 tester 5 4 3 0 1
     echo 13 tester 5 4 3 0 1
 )
+tests''
 NB. (130<:b);(b=:+/\"1 a);(a =: tap \:~19 62 71 72)
 
 NB. https://opengarden.com/jobs
