@@ -14,10 +14,10 @@ sum =: 4 : 0 NB. x subset sum of y
     assert. *./(x<:+/y),(x>0),(x>:<./y),(0&=#@$x)
     minterms =: <./>.x%y NB. target sum needs at least this many terms
     aibeg =: 0 NB. starting anagram index
-    aiend =: <:!#y NB. ending anagram index
+    aiend =: <:!#x:y NB. ending anagram index
     sorted =: \:~y NB. descending
-    NB. exhaustive search (exponential)
-    while. aibeg <: aiend do.
+    
+    while. aibeg <: aiend do. NB. exhaustive search
         z =: aibeg A. sorted
         if. x e. +/\ z do.
             ({.>:I.(x =+/\z)) {. z
@@ -38,6 +38,8 @@ tests =: 3 : 0
     echo 10 tester 5 4 3 0 1
     echo 11 tester 5 4 3 0 1
     echo 13 tester 5 4 3 0 1
+    echo 'known subset of pops: ',(":ssp =: +/}.16{.pops)
+    echo ssp tester pops
 )
 tests''
 NB. (130<:b);(b=:+/\"1 a);(a =: tap \:~19 62 71 72)
