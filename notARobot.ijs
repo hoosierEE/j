@@ -12,18 +12,20 @@ target =: 7
 
 sum =: 4 : 0 NB. x subset sum of y
     assert. *./(x<:+/y),(x>0),(x>:<./y),(0&=#@$x)
-    minterms =: <./>.x%y NB. target sum needs at least this many terms
-    aibeg =: 0 NB. starting anagram index
+    NB. minterms =: <./>.x%y NB. target sum needs at least this many terms
     aiend =: <:!#x:y NB. ending anagram index
-    sorted =: \:~y NB. descending
-    
-    while. aibeg <: aiend do. NB. exhaustive search
-        z =: aibeg A. sorted
+    aicur =: aiend
+    sorty =: \:~y NB. descending
+
+    NB. skip impossible matches
+
+    while. aicur >: 0 do. NB. exhaustive search
+        z =: aicur A. sorty
         if. x e. +/\ z do.
             ({.>:I.(x =+/\z)) {. z
             return.
         end.
-        aibeg =: >: aibeg
+        aicur =: <: aicur
     end.
     'none found'
 )
