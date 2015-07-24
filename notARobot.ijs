@@ -1,31 +1,24 @@
-
-NB. first subset whose sum equals x
-NB. Sum the first k elements of the xth anagram of `pops` (sorted descending)
-NB. until the sum equals or exceeds `total`.  If equal, print and exit.
-NB. Otherwise, increment x by !k and repeat until x >: !#y.
+NB. Subset Sum Problem (NP-Complete)
+NB. Sum first k elements of the xth anagram of `pops` (sorted descending)
+NB. until sum equals target value.  If found, print and exit.
+NB. If target < +/k, increment x by !(k -~ #pops) and repeat until x >: !#y.
 clear''
-
-pips =: 5 4 2 1
+pips =: 5 4 2 0 1
 pops =: 18897109 12828837 9461105 6371773 5965343 5946800 5582170 5564635 5268860 4552402 4335391 4296250 4224851 4192887 3439809 3279833 3095313 2812896 2783243 2710489 2543482 2356285 2226009 2149127 2142508 2134411 NB. sorted descending
-NB. target =: 1e8
-target =: 7
 
-sum =: 4 : 0 NB. x subset sum of y
-    assert. *./(x<:+/y),(x>0),(x>:<./y),(0&=#@$x)
-    NB. minterms =: <./>.x%y NB. target sum needs at least this many terms
-    aiend =: <:!#x:y NB. ending anagram index
-    aicur =: aiend
+sum =: 4 : 0 NB. x is subset sum of y?
+    assert. *./(x<:+/y),(x>0),(x>:<./y),(0&=#@$x) NB. fail fast
+    aicur =: <:!#x:y NB. anagram index current
     sorty =: \:~y NB. descending
 
-    NB. skip impossible matches
-
     while. aicur >: 0 do. NB. exhaustive search
-        z =: aicur A. sorty
+        z =: (x:aicur) A. sorty
         if. x e. +/\ z do.
             ({.>:I.(x =+/\z)) {. z
             return.
         end.
-        aicur =: <: aicur
+        NB. decrement current anagram index by !(length of list - overshoot index)
+        aicur =: aicur - !(#x:sorty) - {.I.-.1e8>+/\z
     end.
     'none found'
 )
@@ -33,18 +26,17 @@ sum =: 4 : 0 NB. x subset sum of y
 NB. (+/\pips);(10=+/\pips);(I.10>+/\pips) maybe...
 tester =: 4 : 'x;x sum y'
 tests =: 3 : 0
-    echo 2 tester 5 4 3 0 1
-    echo 3 tester 5 4 3 0 1
-    echo 6 tester 5 4 3 0 1
-    echo 8 tester 5 4 3 0 1
-    echo 10 tester 5 4 3 0 1
-    echo 11 tester 5 4 3 0 1
-    echo 13 tester 5 4 3 0 1
+    echo 2  tester pips
+    echo 3  tester pips
+    echo 6  tester pips
+    echo 8  tester pips
+    echo 10 tester pips
+    echo 11 tester pips
+    echo 13 tester pips
     echo 'known subset of pops: ',(":ssp =: +/}.16{.pops)
     echo ssp tester pops
 )
 tests''
-NB. (130<:b);(b=:+/\"1 a);(a =: tap \:~19 62 71 72)
 
 NB. https://opengarden.com/jobs
 NB. The 2010 Census puts populations of 26 largest US metro areas at
