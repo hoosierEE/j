@@ -1,6 +1,6 @@
 #!/usr/bin/env jc
 
-About =: 0 : 0
+About =: 0 :0
 Command-line utility to calculate compound interest.
 )
 
@@ -16,8 +16,8 @@ Optionally provide a monthly contribution amount.  Default value is zero.
 )
 
 NB. script handling
-handleArgs =: 3 : 0
-    if. #ARGV = 0 do.
+handleArgs =: 3 :0
+    if. 0=#ARGV do.
         echo Help
     end.
 )
