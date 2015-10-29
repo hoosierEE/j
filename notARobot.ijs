@@ -36,7 +36,7 @@ tests =: 3 : 0
     echo 'known subset of pops: ',(":ssp =: +/}.16{.pops)
     echo ssp tester pops
 )
-tests''
+NB. tests''
 
 NB. https://opengarden.com/jobs
 NB. The 2010 Census puts populations of 26 largest US metro areas at
