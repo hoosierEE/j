@@ -9,7 +9,7 @@ def follow(zfn):
     recursively follow each node, spitting out zipfile comments
     (as a side effect) to a text file.
     """
-    print>>f,z.getinfo(zfn + '.txt').comment
-    follow(z.open(zfn + '.txt').read().split()[-1])
+    print>>f,zfn.getinfo(zfn + '.txt').comment
+    follow(zfn.open(zfn + '.txt').read().split()[-1])
 
 follow('90052') # get this party started
