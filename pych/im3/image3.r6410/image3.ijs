@@ -34,19 +34,19 @@ systems=.5 6  NB. linux/PC
 system=. systems i. 9!:12 ''  NB. linux is 0; PC is 1
 
 NB. display error if not 32-bit linux/PC
-3 : 0''
-if. IF64 +. IFUNIX +: IFWIN do.
-  if. IFJ6 do.
-    wd 'mb "" "Unsupported Platform" '
-  else.
-    sminfo '';'Unsupported Platform'
-  end.
-end.
-''
-)
+NB. 3 : 0''
+NB. if. IF64 +. IFUNIX +: IFWIN do.
+NB.   if. IFJ6 do.
+NB.     wd 'mb "" "Unsupported Platform" '
+NB.   else.
+NB.     sminfo '';'Unsupported Platform'
+NB.   end.
+NB. end.
+NB. ''
+NB. )
 
 NB. System directory separator
-dir_sep=: IFJ6{::'/';system{'/\'             NB. directory separator
+dir_sep=: system{'/\'             NB. directory separator
 
 NB. path to the addon library (dll, so) needs to be correct.
 addon_path=: jpath '~addons/media/image3/'
